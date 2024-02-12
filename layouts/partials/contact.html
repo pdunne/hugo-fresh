@@ -1,13 +1,13 @@
-{{- $section5   := .Site.Params.section5 }}
-{{- if eq $section5 true }}
-{{- $section5 = dict "_" "_" }}
+{{- $contact := .Site.Params.contact }}
+{{- if eq $contact true }}
+{{- $contact = dict "_" "_" }}
 {{- end }}
-{{- $title      := index $section5 "title" | default "Drop us a line or two "}}
-{{- $subtitle   := index $section5 "subtitle" | default "We'd love to hear from you" }}
-{{- $action     := index $section5 "action" }}
-{{- $method     := index $section5 "method" }}
-{{- $buttonText := index $section5 "buttontext" | default "Send Message" }}
-<section class="section section-light-grey is-medium" id="section5">
+{{- $title := index $contact "title" | default "Drop us a line or two "}}
+{{- $subtitle := index $contact "subtitle" | default "" }}
+{{- $action := index $contact "action" }}
+{{- $method := index $contact "method" }}
+{{- $buttonText := index $contact "buttontext" | default "Send Message" }}
+<section class="section section-light-grey is-medium" id="contact">
   <div class="container">
     <div class="title-wrapper has-text-centered">
       <h2 class="title is-2 is-spaced">{{ $title }}</h2>
@@ -18,7 +18,7 @@
     <div class="content-wrapper">
       <div class="columns">
         <div class="column is-6 is-offset-3">
-          <form{{ with $action }} action="{{ . }}"{{end}}{{ with $method }} method="{{ . }}"{{end}}>
+          <form{{ with $action }} action="{{ . }}" {{end}}{{ with $method }} method="{{ . }}" {{end}}>
             <div class="columns is-multiline">
               <div class="column is-6">
                 <input class="input is-medium" name="name" type="text" placeholder="Enter your name">
@@ -33,7 +33,7 @@
                 <button class="button cta is-large primary-btn raised is-clear">{{ $buttonText }}</button>
               </div>
             </div>
-          </form>
+            </form>
         </div>
       </div>
     </div>

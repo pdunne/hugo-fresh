@@ -1,0 +1,40 @@
+{{- $thestory := .Site.Params.thestory }}
+{{- $title := index $thestory "title" }}
+{{- $subtitle := index $thestory "subtitle" }}
+{{- $image := index $thestory "image" }}
+{{- $text := index $thestory "text" }}
+{{- $buttonText := index $thestory "buttontext" }}
+{{- $buttonLink := index $thestory "buttonlink" }}
+<section class="section section-feature-grey is-medium" id="thestory">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-10 is-offset-1">
+        <div class="has-text-centered">
+
+          {{/* <img class="pushed-image" src="{{ printf " /images/%s" $image | relURL }}"> */}}
+          {{/* <iframe title="Le&#x20;magn&#x00E9;tisme&#x20;au&#x20;secours&#x20;des&#x20;terres&#x20;rares"
+            allowfullscreen="true"
+            style="transition-duration:0;transition-property:no;margin:0 auto;position:relative;display:block;background-color:#000000;"
+            frameborder="0" scrolling="no" width="100%" height="100%"
+            src="https://www.arte.tv/embeds/fr/114396-000-A?autoplay=false&mute=0"></iframe> */}}
+        </div>
+      </div>
+    </div>
+
+    <div class="title-wrapper has-text-centered">
+      <h2 class="title is-2">{{ $title }}</h2>
+      <h3 class="subtitle is-5 is-muted">{{ $subtitle }}</h3>
+    </div>
+    <span class="card-text">{{ $text | markdownify }}</span>
+
+    <p class="has-text-centered mt-20">
+      {{/*
+    <div class="card-text">
+      <p>{{ $text | markdownify }}</p>
+    </div> */}}
+    {{/* <a class="button cta is-large rounded secondary-btn raised" href="{{ $buttonLink }}">
+      {{ $buttonText }}
+    </a> */}}
+    </p>
+  </div>
+</section>

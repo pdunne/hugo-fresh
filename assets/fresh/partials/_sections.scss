@@ -7,19 +7,25 @@ Section Styles
     &.section-light-grey {
         background-color: $light-grey;
     }
+
     &.section-feature-grey {
         background-color: $section-grey;
     }
+
     &.section-secondary {
         background-color: $secondary;
     }
+
     &.section-half {
         height: 75vh !important;
     }
-    .title, .subtitle {
+
+    .title,
+    .subtitle {
         font-family: 'Open Sans', sans-serif;
 
     }
+
     .subtitle {
         &.is-muted {
             color: $muted-grey;
@@ -31,10 +37,13 @@ Section Styles
 .title-wrapper {
     max-width: 500px;
     margin: 0 auto;
-    .title, .subtitle {
+
+    .title,
+    .subtitle {
         font-family: 'Open Sans', sans-serif;
 
     }
+
     .subtitle {
         &.is-muted {
             color: $muted-grey;
@@ -48,6 +57,7 @@ Section Styles
     border-radius: 50px;
     background: $secondary;
     width: 60px;
+
     &.is-centered {
         margin: 0 auto;
     }
@@ -65,21 +75,75 @@ img.pushed-image {
 }
 
 //Icon box
+
+// .media.icon-box {
+//     border-top: none !important;
+// 
+//     .media-content .content p {
+//         span {
+//             display: block;
+//         }
+// 
+//         .icon-box-title {
+//             color: $blue-grey;
+//             font-size: 1.2rem;
+//             font-weight: 600;
+//         }
+// 
+//         .icon-box-text {
+//             color: $title-grey;
+//             font-size: 1rem;
+//             font-weight: 400;
+//         }
+//     }
+// }
+// 
+// .media-left,
+// .media-right {
+//     flex-basis: 10%;
+//     flex-grow: 1;
+//     flex-shrink: 1;
+// }
+
 .media.icon-box {
     border-top: none !important;
-    .media-content .content p {
-        span {
-            display: block;
-        }
-        .icon-box-title {
-            color: $blue-grey;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-        .icon-box-text {
-            color: $title-grey;
-            font-size: 1rem;
-            font-weight: 400;
+
+    display: flex; // Ensure .media.icon-box acts as a flex container
+    align-items: center; // Align children vertically in the center
+
+    .media-content {
+        flex-grow: 1; // Allow .media-content to take up the remaining space
+        display: flex; // Make .media-content a flex container
+        flex-direction: column; // Stack children vertically
+        justify-content: center; // Center content vertically within .media-content
+
+        .content p {
+            display: flex; // Apply flex to align title and text
+            flex-direction: column; // Stack span and .icon-box-text vertically
+            // align-items: center; // Align items to the start of the container
+
+            span {
+                display: block;
+            }
+
+            .icon-box-title {
+                color: $blue-grey;
+                font-size: 1.2rem;
+                font-weight: 600;
+            }
+
+            .icon-box-text {
+                color: $title-grey;
+                font-size: 1rem;
+                font-weight: 400;
+            }
         }
     }
+}
+
+.media-left,
+.media-right {
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 1;
 }
